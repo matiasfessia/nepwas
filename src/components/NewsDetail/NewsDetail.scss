@@ -1,0 +1,21 @@
+.news-detail {
+  padding: 15px 0px;
+  border-bottom: 1px solid #ccc;
+  &__link {
+    text-decoration: none;
+    color: #000;
+  }
+  &__title {
+    margin: 0;
+    font-size: 16px;
+  }
+  &__brief {
+    margin: 8px 0;
+    font-size: 14px;
+  }
+  &__data-and-source {
+    text-align: right;
+    font-size: 12px;
+    margin: 10px 0 0 0;
+  }
+}

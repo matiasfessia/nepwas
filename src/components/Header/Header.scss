@@ -1,0 +1,26 @@
+.header {
+  display: flex;
+  padding: 0 15px;
+  background-color: map-get($colors, 'primary');
+  &__btn-country {
+    margin-left: auto;
+    background: none;
+    color: #fff;
+    font-size: 14px;
+    border: NONE;
+    line-height: 10px;
+    outline: none;
+    .fa-globe {
+      display: block;
+      font-size: 18px;
+    }
+  }
+  &__title {
+    color: #fff;
+    font-size: 18px;
+    em {
+      color: #bbb554;
+      font-style: normal;
+    }
+  }
+}
