@@ -1,21 +1,19 @@
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { fetchNews } from 'redux/actions/news-actions';
-import NewsList from 'components/NewsList/NewsList';
+import NewsList from 'components/NewsList';
 
-class CategoryNewsPage extends Component {
+const CategoryNewsPage = ({ match, fetchNews, news }) => {
 
-  componentDidMount() {
-    this.props.fetchNews(this.props.match.params.category);
-  }
+  useEffect(() => {
+    fetchNews(match.params.category);
+  }, []);
 
-  render() {
-    return (
-      <div>
-        <NewsList news={this.props.news} />
-      </div>
-    );
-  };
+  return (
+    <div>
+      <NewsList news={news} />
+    </div>
+  );
 }
 
 const mapStateToProps = state => ({

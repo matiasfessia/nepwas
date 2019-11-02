@@ -1,5 +1,5 @@
 import React from 'react';
-import NewsDetail from 'components/NewsDetail/NewsDetail';
+import NewsDetail from './NewsDetail';
 
 const NewsList = ({news}) => (
   <div className="news">

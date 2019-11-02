@@ -1,7 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-const Categories = ({ categories }) => {
+const Categories = ({ categories, userId }) => {
   return (
     <div className="categories">
       <button type="button">All Categories</button>
@@ -15,5 +16,10 @@ const Categories = ({ categories }) => {
     </div>
   );
 };
+
+Categories.propTypes = {
+  //categories: PropTypes.array.isRequired
+  userId: PropTypes.number.isRequired
+}
 
 export default Categories;

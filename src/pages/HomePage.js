@@ -1,24 +1,21 @@
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux'
 import { fetchNews } from 'redux/actions/news-actions';
 import { changeCurrentCategory } from 'redux/actions/categories-actions';
 import Categories from 'components/Categories';
-import NewsList from 'components/NewsList/NewsList';
+import NewsList from 'components/NewsList';
 
+const HomePage = ({ fetchNews, categories, news }) => {
+  useEffect(() => {
+    fetchNews();
+  }, []);
 
-class HomePage extends Component {
-  componentDidMount() {
-    this.props.fetchNews();
-  }
-
-  render() {
-    return (
-      <div>
-        <Categories categories={this.props.categories} />
-        <NewsList news={this.props.news} />
-      </div>
-    );
-  };
+  return (
+    <div>
+      <Categories categories={categories} />
+      <NewsList news={news} />
+    </div>
+  );
 }
 
 const mapStateToProps = state => ({
@@ -33,11 +30,4 @@ const mapDispatchToProps = dispatch => ({
   changeCurrentCategory: () => dispatch(changeCurrentCategory())
 });
 
-/*
-HomePage.propTypes = {
-  movies: PropTypes.array.isRequired,
-  loading: PropTypes.bool.isRequired,
-  errors: PropTypes.object
-}
-*/
 export default connect(mapStateToProps, mapDispatchToProps)(HomePage);

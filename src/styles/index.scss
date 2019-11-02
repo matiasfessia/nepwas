@@ -4,7 +4,7 @@ $colors: (
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  font-family: "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -17,8 +17,7 @@ code {
 }
 
 // components styles imports
-@import "App.scss";
-@import "components/Header/Header.scss";
-@import "components/Categories/Categories.scss";
-@import "components/NewsDetail/NewsDetail.scss";
-@import "pages/ChartsPage/ChartsPage.scss";
+//@import "App.scss";
+@import "./components/Header.scss";
+@import "./components/Categories.scss";
+@import "./components/NewsDetail.scss";
